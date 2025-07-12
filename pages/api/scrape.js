@@ -19,9 +19,6 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  if (!verifyRequest(req)) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
 
   const slugParam = req.query.slug || '';
   const mockData = getMockDestinations();
